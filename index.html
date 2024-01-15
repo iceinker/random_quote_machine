@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Machine</title>
+
+    <script>
+      const QuoteBank = [
+        {
+          author:
+            "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+          quote: "Albert Einstein",
+        },
+        {
+          author: "Be yourself; everyone else is already taken.",
+          quote: "Oscar Wilde",
+        },
+        {
+          author:
+            "You've gotta dance like there's nobody watching,Love like you'll never be hurt,Sing like there's nobody listening,And live like it's heaven on earth.",
+          quote: "William W. Purkey",
+        },
+        {
+          author: "You only live once, but if you do it right, once is enough.",
+          quote: "Mae West",
+        },
+        {
+          author:
+            "In three words I can sum up everything I've learned about life: it goes on.",
+          quote: "Robert Frost",
+        },
+        {
+          author:
+            "To live is the rarest thing in the world. Most people exist, that is all.",
+          quote: "Oscar Wilde",
+        },
+        {
+          author:
+            "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+          quote: "Mahatma Gandhi",
+        },
+        {
+          author:
+            "I am so clever that sometimes I don't understand a single word of what I am saying.",
+          quote: "Oscar Wilde",
+        },
+        {
+          author:
+            "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”",
+          quote: "Bernard M. Baruch",
+        },
+        {
+          author: "If you tell the truth, you don't have to remember anything.",
+          quote: "Mark Twain",
+        },
+      ];
+      window.onload = init;
+      function init() {
+        getQuote();
+      }
+
+      function getQuote() {
+        let quoteSize = QuoteBank.length;
+        let randomIndex = Math.floor(Math.random() * quoteSize);
+        let randomQuoteData = QuoteBank[randomIndex];
+
+        let twitterLink =
+          "https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22";
+
+        document.getElementById("tweet-quote").href = twitterLink;
+        document.getElementById("text").innerText = randomQuoteData.quote;
+        document.getElementById("author").innerText = randomQuoteData.author;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="row py-5">
+    <wrapper id="quote-box">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><div id="author"></div></h5>
+          <p class="card-text">
+            <div id="text"></div>
+          </p>
+          <button id="new-quote"
+           onclick="getQuote()"
+            class="btn col-12 btn-block btn-success"
+            >New Quote</button>
+          <a
+            href="twitter.com/intent/tweet"
+            id="tweet-quote"
+            target="_blank"
+            class="btn col-12 btn-block btn-primary"
+            class="button"
+            >Tweet Quote</a>
+        </div>
+      </div>
+    </wrapper>
+    </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
